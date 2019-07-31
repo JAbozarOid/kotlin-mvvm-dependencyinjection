@@ -1,10 +1,12 @@
 package com.example.androidkotlinmvvmdi
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.androidkotlinmvvmdi.model.Quote
+import com.example.androidkotlinmvvmdi.ui.quotes.QuoteActivity
 import com.example.androidkotlinmvvmdi.utilities.InjectorUtils
 import com.example.androidkotlinmvvmdi.viewModel.QuotesViewModel
 import kotlinx.android.synthetic.main.activity_main.*
@@ -40,6 +42,11 @@ class MainActivity : AppCompatActivity() {
             viewModel.addQuotes(quote)
             editText_quote.setText("")
             editText_author.setText("")
+        }
+
+        btn_kodien_di.setOnClickListener {
+            startActivity(Intent(this, QuoteActivity::class.java))
+
         }
 
     }
